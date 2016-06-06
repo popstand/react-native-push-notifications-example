@@ -9,11 +9,15 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  PushNotificationIOS
 } from 'react-native';
 
 class PushNotificationsExample extends Component {
   render() {
+
+    PushNotificationIOS.requestPermissions();
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -27,6 +31,47 @@ class PushNotificationsExample extends Component {
           Cmd+D or shake for dev menu
         </Text>
       </View>
+    );
+  }
+
+  componentWillMount() {
+    PushNotificationIOS.addEventListener('register', function(token){
+      console.log('You are registered and the device token is: ',token)
+    });
+    // Add listener for push notifications
+    PushNotificationIOS.addEventListener('notification', this.onNotification);
+    // Add listener for local notifications
+    PushNotificationIOS.addEventListener('localNotification', this.onLocalNotification);
+  }
+
+  componentWillUnmount() {
+    // Remove listener for push notifications
+    PushNotificationIOS.removeEventListener('notification', this.onNotification);
+    // Remove listener for local notifications
+    PushNotificationIOS.removeEventListener('localNotification', this.onLocalNotification);
+  }
+
+  onNotification(notification) {
+    console.log("onNotification");
+    AlertIOS.alert(
+      'Push Notification Received',
+      'Alert message: ' + notification.getMessage(),
+      [{
+        text: 'Dismiss',
+        onPress: null,
+      }]
+    );
+  }
+
+  onLocalNotification(notification) {
+    console.log("onLocalNotification");
+    AlertIOS.alert(
+      'Local Notification Received',
+      'Alert message: ' + notification.getMessage(),
+      [{
+        text: 'Dismiss',
+        onPress: null,
+      }]
     );
   }
 }
