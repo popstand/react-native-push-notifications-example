@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  PushNotificationIOS
+  PushNotificationIOS,
+  AlertIOS
 } from 'react-native';
 
 class PushNotificationsExample extends Component {
