@@ -14,10 +14,27 @@ import {
   AlertIOS
 } from 'react-native';
 
+import OneSignal from 'react-native-onesignal';
+
+let pendingNotifications = [];
+
 class PushNotificationsExample extends Component {
   render() {
 
     PushNotificationIOS.requestPermissions();
+
+    OneSignal.configure({
+        onNotificationOpened: function(message, data, isActive) {
+            var notification = {message: message, data: data, isActive: isActive};
+            console.log('NOTIFICATION OPENED: ', notification);
+            //if (!_navigator) { // Check if there is a navigator object. If not, waiting with the notification.
+            //    console.log('Navigator is null, adding notification to pending list...');
+                pendingNotifications.push(notification);
+            //    return;
+            // }
+            handleNotification(notification);
+        }
+    });
 
     return (
       <View style={styles.container}>
@@ -36,45 +53,68 @@ class PushNotificationsExample extends Component {
   }
 
   componentWillMount() {
-    PushNotificationIOS.addEventListener('register', function(token){
-      console.log('You are registered and the device token is: ',token)
+    // configure OneSignal
+    OneSignal.configure({
+        onNotificationOpened: function(message, data, isActive) {
+            var notification = {message: message, data: data, isActive: isActive};
+            console.log('NOTIFICATION OPENED: ', notification);
+            //if (!_navigator) { // Check if there is a navigator object. If not, waiting with the notification.
+            //    console.log('Navigator is null, adding notification to pending list...');
+                pendingNotifications.push(notification);
+            //    return;
+            // }
+
+            AlertIOS.alert(
+              'Push Notification Received',
+              'Alert message: ' + notification,
+              [{
+                text: 'Dismiss',
+                onPress: null,
+              }]
+            );
+
+            handleNotification(notification);
+        }
     });
-    // Add listener for push notifications
-    PushNotificationIOS.addEventListener('notification', this.onNotification);
-    // Add listener for local notifications
-    PushNotificationIOS.addEventListener('localNotification', this.onLocalNotification);
+    // PushNotificationIOS.addEventListener('register', function(token){
+    //   console.log('You are registered and the device token is: ',token)
+    // });
+    // // Add listener for push notifications
+    // PushNotificationIOS.addEventListener('notification', this.onNotification);
+    // // Add listener for local notifications
+    // PushNotificationIOS.addEventListener('localNotification', this.onLocalNotification);
   }
 
-  componentWillUnmount() {
-    // Remove listener for push notifications
-    PushNotificationIOS.removeEventListener('notification', this.onNotification);
-    // Remove listener for local notifications
-    PushNotificationIOS.removeEventListener('localNotification', this.onLocalNotification);
-  }
+  // componentWillUnmount() {
+  //   // Remove listener for push notifications
+  //   PushNotificationIOS.removeEventListener('notification', this.onNotification);
+  //   // Remove listener for local notifications
+  //   PushNotificationIOS.removeEventListener('localNotification', this.onLocalNotification);
+  // }
 
-  onNotification(notification) {
-    console.log("onNotification");
-    AlertIOS.alert(
-      'Push Notification Received',
-      'Alert message: ' + notification.getMessage(),
-      [{
-        text: 'Dismiss',
-        onPress: null,
-      }]
-    );
-  }
-
-  onLocalNotification(notification) {
-    console.log("onLocalNotification");
-    AlertIOS.alert(
-      'Local Notification Received',
-      'Alert message: ' + notification.getMessage(),
-      [{
-        text: 'Dismiss',
-        onPress: null,
-      }]
-    );
-  }
+  // onNotification(notification) {
+  //   console.log("onNotification");
+  //   AlertIOS.alert(
+  //     'Push Notification Received',
+  //     'Alert message: ' + notification.getMessage(),
+  //     [{
+  //       text: 'Dismiss',
+  //       onPress: null,
+  //     }]
+  //   );
+  // }
+  //
+  // onLocalNotification(notification) {
+  //   console.log("onLocalNotification");
+  //   AlertIOS.alert(
+  //     'Local Notification Received',
+  //     'Alert message: ' + notification.getMessage(),
+  //     [{
+  //       text: 'Dismiss',
+  //       onPress: null,
+  //     }]
+  //   );
+  // }
 }
 
 const styles = StyleSheet.create({
