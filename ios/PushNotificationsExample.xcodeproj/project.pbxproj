@@ -23,7 +23,7 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1FD7DD341D06377600368089 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FBEAACC1D06237F009532DC /* libRCTPushNotification.a */; };
 		1FDAB6661D07ADF40004B433 /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDAB65F1D07ADD50004B433 /* libRCTOneSignal.a */; };
-		598639B202433488CEA48D7D /* libPods-PushNotificationsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5027E6AC7297ED0CF5DCAD /* libPods-PushNotificationsExample.a */; };
+		3130F11C935B325675013195 /* libPods-PushNotificationsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7880D4856DF3FD5CEEDEF4 /* libPods-PushNotificationsExample.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -143,11 +143,11 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1FBEAAC71D06237F009532DC /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 		1FDAB6551D07ADD50004B433 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTOneSignal.xcodeproj; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; };
+		25108ECF0F2A8A6B0F6317CC /* Pods-PushNotificationsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationsExample/Pods-PushNotificationsExample.debug.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		82FCC4AFC16EB1F45597B0A2 /* Pods-PushNotificationsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsExample.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-PushNotificationsExample/Pods-PushNotificationsExample.debug.xcconfig"; sourceTree = "<group>"; };
+		7A7880D4856DF3FD5CEEDEF4 /* libPods-PushNotificationsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PushNotificationsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		9F7B296DD5E8D630ABC746BD /* Pods-PushNotificationsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsExample.release.xcconfig"; path = "../Pods/Target Support Files/Pods-PushNotificationsExample/Pods-PushNotificationsExample.release.xcconfig"; sourceTree = "<group>"; };
-		DA5027E6AC7297ED0CF5DCAD /* libPods-PushNotificationsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PushNotificationsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8353005C0FC596AD9F2F5BB6 /* Pods-PushNotificationsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationsExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationsExample/Pods-PushNotificationsExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +174,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				598639B202433488CEA48D7D /* libPods-PushNotificationsExample.a in Frameworks */,
+				3130F11C935B325675013195 /* libPods-PushNotificationsExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,15 +236,6 @@
 				00E356F11AD99517003FC87E /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0B8059EF0BC75E47809CEC0E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				82FCC4AFC16EB1F45597B0A2 /* Pods-PushNotificationsExample.debug.xcconfig */,
-				9F7B296DD5E8D630ABC746BD /* Pods-PushNotificationsExample.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
@@ -343,8 +334,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* PushNotificationsExampleTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-				0B8059EF0BC75E47809CEC0E /* Pods */,
-				DB8E6465B0BF615FBEDA884C /* Frameworks */,
+				BF98BD9CC2990226B85FCEC3 /* Pods */,
+				8F6BBA930AA0333C04D9D350 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -359,12 +350,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB8E6465B0BF615FBEDA884C /* Frameworks */ = {
+		8F6BBA930AA0333C04D9D350 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DA5027E6AC7297ED0CF5DCAD /* libPods-PushNotificationsExample.a */,
+				7A7880D4856DF3FD5CEEDEF4 /* libPods-PushNotificationsExample.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF98BD9CC2990226B85FCEC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25108ECF0F2A8A6B0F6317CC /* Pods-PushNotificationsExample.debug.xcconfig */,
+				8353005C0FC596AD9F2F5BB6 /* Pods-PushNotificationsExample.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -649,7 +649,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D5A409AD4BF77B84DA1329D2 /* [CP] Embed Pods Frameworks */ = {
@@ -741,7 +741,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82FCC4AFC16EB1F45597B0A2 /* Pods-PushNotificationsExample.debug.xcconfig */;
+			baseConfigurationReference = 25108ECF0F2A8A6B0F6317CC /* Pods-PushNotificationsExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
@@ -765,7 +765,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F7B296DD5E8D630ABC746BD /* Pods-PushNotificationsExample.release.xcconfig */;
+			baseConfigurationReference = 8353005C0FC596AD9F2F5BB6 /* Pods-PushNotificationsExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (

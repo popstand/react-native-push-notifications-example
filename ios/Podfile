@@ -1,4 +1,4 @@
-project './PushNotificationsExample.xcodeproj'
+#project './PushNotificationsExample.xcodeproj'
 target "PushNotificationsExample" do
   pod 'OneSignal'
 end
