@@ -13,19 +13,15 @@
 
 #import "RCTPushNotificationManager.h"
 
-#import "RCTOneSignal.h"
-
 @implementation AppDelegate
-
-@synthesize oneSignal = _oneSignal;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   NSURL *jsCodeLocation;
 
-  self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
-                                                         appId:@"44ef7701-33f9-48fe-a921-936d3a6e4495"];
-  
+  //self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
+  //                                                       appId:@"44ef7701-33f9-48fe-a921-936d3a6e4495"];
+
   /**
    * Loading JavaScript code - uncomment the one you want.
    *
@@ -40,7 +36,7 @@
    * on the same Wi-Fi network.
    */
 
-  //jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+  jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
 
   /**
    * OPTION 2
@@ -50,7 +46,7 @@
    * simulator in the "Release" build configuration.
    */
 
-  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+  //jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"PushNotificationsExample"
