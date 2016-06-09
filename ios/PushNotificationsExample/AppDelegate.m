@@ -23,8 +23,8 @@
 {
   NSURL *jsCodeLocation;
 
-  //self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
-  //                                                       appId:@"44ef7701-33f9-48fe-a921-936d3a6e4495"];
+  self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
+                                                         appId:@"44ef7701-33f9-48fe-a921-936d3a6e4495"];
 
   /**
    * Loading JavaScript code - uncomment the one you want.
