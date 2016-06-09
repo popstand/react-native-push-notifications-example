@@ -38,7 +38,8 @@ class PushNotificationsExample extends Component {
         pendingNotifications.push(notification);
         //   return;
         // }
-        handleNotification(notification);
+
+        // handleNotification(notification);
       }
     });
 
