@@ -8,9 +8,10 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "RCTOneSignal.h"
+#import <OneSignal/OneSignal.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
+@property (strong, nonatomic) OneSignal *oneSignal;
 @end
