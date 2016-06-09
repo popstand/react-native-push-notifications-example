@@ -13,10 +13,19 @@ import {
   PushNotificationIOS,
   AlertIOS
 } from 'react-native';
-
 import OneSignal from 'react-native-onesignal';
 
-let pendingNotifications = [];
+var pendingNotifications = [];
+// var _navigator; // If applicable, declare a variable for accessing your navigator object to handle payload.
+// function handleNotification (notification) { // If you want to handle the notifiaction with a payload.
+    // _navigator.to('main.post', notification.data.title, {
+    //  article: {
+    //    title: notification.data.title,
+    //    link: notification.data.url,
+    //    action: notification.data.actionSelected
+    //  }
+    //});
+// }
 
 class PushNotificationsExample extends Component {
   render() {
@@ -26,7 +35,7 @@ class PushNotificationsExample extends Component {
         console.log('NOTIFICATION OPENED: ', notification);
         // if (!_navigator) { // Check if there is a navigator object. If not, waiting with the notification.
         //   console.log('Navigator is null, adding notification to pending list...');
-        //   pendingNotifications.push(notification);
+        pendingNotifications.push(notification);
         //   return;
         // }
         handleNotification(notification);
